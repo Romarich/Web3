@@ -1,0 +1,42 @@
+Promises : 
+
+	=> systeme plus sympa que les call back.
+	Une promises est un objet qui représente une valeur qui est dispo mnt ou plus tard ou jamais.
+
+	=> pour des opérations asynchrones.
+	=> ex: on envoie un requete web et on attend une reponse du serveur => 200 ou 500 donc du coup on recoit
+	pas la rep direct donc du coup on peut continuer le code tant qu'on a pas les reponses.
+
+	let promise = doSomething();
+	promise.then(successCallBack, failureCallBack);
+	ou alors doSomething().then(successCallBack,failureCallBack);
+
+	du coup pour la promesse on sait pas quand il sera complété.
+
+Garanties:
+
+	NodeJS est monothread. => pourtant en web on doit etre multithread.
+		=> du coup quand il y a une methode asynchrone il le donne a l'OS qui s'en  occupe.
+		=> NodeJS tourne et quand il a un callBack a faire il le fait sinon il attend.
+	=> event loop il n'execute que des callback quand il y en a.
+
+	=> ajout tardifs executés => c'est le fait qu'on puisse mettre plusieurs then.
+
+	let promise = doSomething();
+	promise.then(successCallBack1, failureCallBack1);
+	promise.then(successCallBack2, failureCallBack2);
+	promise.then(successCallBack3, failureCallBack3);
+
+	=> callBack multiples independants => si un callBack foire alors on peut faire les autres.
+		=> 3 then differents.
+
+Chainages => sans les promesses on imbrique les call back => (call back HELL)
+	=> mais ici si un foire alors les suivant ne fonctionnent pas et c'est interrompu
+	=> pareil que faire des .then sur des .then.
+
+Propagations des erreurs :
+	=> on met un catch a la fin comme un .then
+
+Pour creer une promesse
+
+=> MDM promises => bible de javacript.
