@@ -40,3 +40,6 @@ Propagations des erreurs :
 Pour creer une promesse
 
 => MDM promises => bible de javacript.
+
+
+MongoDb si on veut avoir un truc comme pgAdmin => du coup => Robo 3T
